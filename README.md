@@ -1,5 +1,7 @@
 # SQLNocturne
 
+![SQLNocturne architecture overview](docs/assets/sqlnocturne-architecture.png)
+
 **No heavy ORM. No blind SQL. No hidden magic.**
 
 SQLNocturne is a safety-first, JSON-first SQL runtime for Python. It gives
