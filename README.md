@@ -51,6 +51,8 @@ Python SQL runtime, safe SQL query builder, SQLite Python runtime, PostgreSQL ad
 
 ## Installation
 
+Full install guide: [docs/INSTALL.md](docs/INSTALL.md)
+
 For local development:
 
 ```bash
