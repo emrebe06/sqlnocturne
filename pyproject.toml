@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sqlnocturne"
+version = "0.1.0"
+description = "Safety-first, JSON-first SQL runtime for Python."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Emre B." }]
+license = "Apache-2.0"
+keywords = ["sql", "database", "runtime", "sqlite", "json", "safety", "quickapi"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Database",
+  "Topic :: Software Development :: Libraries",
+]
+dependencies = []
+
+[project.optional-dependencies]
+postgresql = ["psycopg[binary]>=3.1"]
+mysql = ["pymysql>=1.1"]
+native = []
+all = ["psycopg[binary]>=3.1", "pymysql>=1.1"]
+
+[project.scripts]
+sqlnocturne = "sqlnocturne.cli.main:main"
+
+[tool.setuptools.packages.find]
+include = ["sqlnocturne*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

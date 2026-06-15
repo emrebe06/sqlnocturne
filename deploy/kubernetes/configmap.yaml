@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sqlnocturne-config
+data:
+  SQLNOCTURNE_SAFE_MODE: "strict"
+  SQLNOCTURNE_DATABASE: "sqlite:////data/app.db"

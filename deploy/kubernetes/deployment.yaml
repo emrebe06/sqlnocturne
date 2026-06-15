@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sqlnocturne
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sqlnocturne
+  template:
+    metadata:
+      labels:
+        app: sqlnocturne
+    spec:
+      containers:
+        - name: sqlnocturne
+          image: sqlnocturne:local
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - configMapRef:
+                name: sqlnocturne-config
+          volumeMounts:
+            - name: data
+              mountPath: /data
+          readinessProbe:
+            exec:
+              command: ["python", "-m", "sqlnocturne.cli.main", "check"]
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            exec:
+              command: ["python", "-m", "sqlnocturne.cli.main", "check"]
+            initialDelaySeconds: 15
+            periodSeconds: 20
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: sqlnocturne-data
