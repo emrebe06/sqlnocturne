@@ -4,7 +4,8 @@
 
 SQLNocturne is a safety-first, JSON-first SQL runtime for Python. It gives
 developers clear database access, guarded query execution, standard result
-objects, and a future path to C/C++ and Rust-powered performance.
+objects, SQLite/PostgreSQL/MySQL adapter boundaries, and an optional native
+C/C++/Rust/ASM worker layer for SQL safety and runtime acceleration.
 
 SQLNocturne is an independent product. It can integrate with API frameworks
 later, but it does not depend on QuickAPI, FastAPI, Flask, Django, SQLAlchemy,
@@ -13,6 +14,19 @@ Alembic, Pydantic, Click, Typer, or Rich.
 V0.1 is SQLite-first, not SQLite-only. SQLite is the first working adapter
 because it ships with Python, but the core already has adapter and dialect
 boundaries for future PostgreSQL, MySQL, DuckDB, or other database backends.
+
+## Ecosystem
+
+SQLNocturne is the data runtime in a small native-first Python ecosystem:
+
+- [QuickAPI](https://github.com/emrebe06/QuickAPI): JSON-first Python API runtime.
+- [Katmer](https://github.com/emrebe06/katmer): native C ABI layered execution core.
+
+SQLNocturne can run alone. In the ecosystem, it provides guarded database access, JSON result objects, migrations, CLI workflows, and optional native SQL safety checks.
+
+## Keywords
+
+Python SQL runtime, safe SQL query builder, SQLite Python runtime, PostgreSQL adapter Python, MySQL adapter Python, SQL injection guard, JSON-first database library, lightweight ORM alternative, SQLAlchemy alternative, native SQL guard, C ABI database runtime, Docker database tooling, Kubernetes database runtime.
 
 ## What It Is
 
